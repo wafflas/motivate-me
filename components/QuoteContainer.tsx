@@ -5,7 +5,6 @@ import Author from "./Author";
 import DiceButton from "./DiceButton";
 import fetchQuote from "@/app/fetchQuote";
 
-
 const QuoteContainer = () => {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
@@ -23,8 +22,6 @@ const QuoteContainer = () => {
     fetchQuoteData();
   }, []);
 
-
-
   return (
     <div
       className="bg-white rounded-3xl  
@@ -40,9 +37,9 @@ const QuoteContainer = () => {
     >
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4">
         <QuoteHeader quoteNumber={randomNumber} />
-      </div> 
+      </div>
       <p className="text-black text-lg md:text-xl lg:text-2xl font-inter italic text-center mt-4">
-        "{quote}"
+        &quot;{quote}&quot;
       </p>
 
       <Author author={author} />
