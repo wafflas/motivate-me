@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Kaushan+Script&family=Lobster&family=Ranchers&family=Bitter&family=Roboto&family=Montserrat&display=swap');
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,11 +17,36 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    @apply bg-gradient-to-b from-gray-500 to-blue-200;
+}
+
+@keyframes fontChange {
+  0% {
+    font-family: 'Major Mono Display', monospace;
+  }
+  14% {
+    font-family: 'Kaushan Script', cursive;
+  }
+  28% {
+    font-family: 'Lobster', cursive;
+  }
+  42% {
+    font-family: 'Ranchers', cursive;
+  }
+  56% {
+    font-family: 'Bitter', serif;
+  }
+  70% {
+    font-family: 'Roboto', sans-serif;
+  }
+  84% {
+    font-family: 'Montserrat', sans-serif;
+  }
+  100% {
+    font-family: 'Major Mono Display', monospace;
+  }
+}
+
+.font-change {
+  animation: fontChange 2s infinite;
 }
