@@ -1,7 +1,8 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Kaushan+Script&family=Lobster&family=Ranchers&family=Bitter&family=Roboto&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap");
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,36 +18,114 @@
 }
 
 body {
-    @apply bg-gradient-to-b from-gray-500 to-blue-200;
+  @apply bg-gradient-to-b from-gray-500 to-blue-200;
+  font-family: "Inter", "Poppins", "Raleway", sans-serif;
+  transition: background 0.3s;
+}
+
+dark body {
+  @apply bg-gradient-to-b from-gray-900 to-gray-700;
+}
+
+.dark-mode-toggle {
+  @apply fixed top-4 right-4 z-50 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow transition-colors duration-300 cursor-pointer;
+}
+
+.dark .quote-card {
+  @apply bg-gray-800 text-white border-gray-600;
 }
 
 @keyframes fontChange {
   0% {
-    font-family: 'Major Mono Display', monospace;
+    font-family: "Major Mono Display", monospace;
   }
   14% {
-    font-family: 'Kaushan Script', cursive;
+    font-family: "Kaushan Script", cursive;
   }
   28% {
-    font-family: 'Lobster', cursive;
+    font-family: "Lobster", cursive;
   }
   42% {
-    font-family: 'Ranchers', cursive;
+    font-family: "Ranchers", cursive;
   }
   56% {
-    font-family: 'Bitter', serif;
+    font-family: "Bitter", serif;
   }
   70% {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
   }
   84% {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
   100% {
-    font-family: 'Major Mono Display', monospace;
+    font-family: "Major Mono Display", monospace;
   }
 }
 
 .font-change {
   animation: fontChange 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes diceBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes diceRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-in-up {
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dice-bounce {
+  animation: diceBounce 0.5s;
+}
+.dice-rotate {
+  animation: diceRotate 0.5s;
 }
